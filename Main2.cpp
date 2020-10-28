@@ -1,7 +1,7 @@
 ﻿#include<iostream>
 #include<string>
 #include<clocale>
-#include "Head.h"
+#include "Head2.h"
 #pragma warning(disable : 4996)
 
 using namespace std;

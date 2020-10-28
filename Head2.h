@@ -1,11 +1,27 @@
 #pragma once
 #pragma warning(disable : 4996)
-
+#include <string>
 #include <cstring>
 #include <iostream>
 
+using namespace std;
+
+class ErrorException {
+
+public:
+
+	ErrorException(string error) : m_error(error) {}
+
+	const char* getError() { return m_error.c_str(); }
+
+private:
+
+	string m_error;
+};
+
 
 class Prstr {
+
 public:
 
 	Prstr();

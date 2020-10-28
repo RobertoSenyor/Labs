@@ -1,4 +1,4 @@
-#include "Head.h"
+#include "Head2.h"
 #include <cstring>
 #include <iostream>
 #include <cstdlib>
@@ -19,15 +19,15 @@ Prstr::Prstr(const Prstr& other) {
 	try {
 
 
-		if (other == nullptr || !other.pp) throw "Field isn't solved ";
+		if (other == nullptr || !other.pp) throw ErrorException("You're enter wrong data type");
 
 		pp = new char[strlen(other.pp) + 1];
 		strcpy(pp, other.pp);
 	}
 
-	catch (const char* exception) {
+	catch (ErrorException &exception) {
 
-		std::cerr << "Error: " << exception << std::endl << "_______________" << std::endl;
+		std::cerr << "Error: " << exception.getError() << std::endl << "_______________" << std::endl;
 	}
 }
 
@@ -37,15 +37,15 @@ Prstr::Prstr(const char* other) {
 	try {
 
 
-		if (other == nullptr || !other) throw "Field isn't solved ";
+		if (other == nullptr || !other) throw ErrorException("You're enter wrong data type");
 
 		pp = new char[strlen(other) + 1];
 		strcpy(pp, other);
 	}
 
-	catch (const char* exception) {
+	catch (ErrorException& exception) {
 
-		std::cerr << "Error: " << exception << std::endl << "_______________" << std::endl;
+		std::cerr << "Error: " << exception.getError() << std::endl << "_______________" << std::endl;
 	}
 }
 
